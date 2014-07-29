@@ -1,0 +1,10 @@
+function start_postgres --description "Starts a postgres server"
+  pushd ~/Work;
+  pg_ctl -D postgresql -l logfile start
+  popd;
+end
+
+function gpu --descript "git pull upstream master; and git push"
+  git pull upstream master;
+  git push;
+end

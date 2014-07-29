@@ -1,0 +1,22 @@
+# Theme
+set fish_theme integral
+
+# FISH plugins
+set fish_plugins bundler brew rbenv rails emoji-clock
+
+# rbenv
+set -x PATH $HOME/.rbenv/bin $PATH
+set -x PATH $HOME/.rbenv/shims $PATH
+rbenv rehash >/dev/null ^&1
+
+# lb
+set -x PATH $PATH ~/Work/lb/bin
+set -x JENKINS_USERNAME omegahm
+set -x JENKINS_API_TOKEN 374cf223fb6bd8d1f03adee1bac5192e
+
+# docker
+set -x DOCKER_HOST tcp://172.16.42.43:4243
+
+# go
+set -x GOPATH $HOME/go
+set -x PATH $PATH $GOPATH/bin

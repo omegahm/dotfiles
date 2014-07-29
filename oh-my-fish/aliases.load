@@ -1,0 +1,17 @@
+# be!
+alias be="bundle exec"
+
+# Make git always use hub
+alias git=hub
+
+# docker doens't understand `env DOCKERHOST`
+# alias docker="docker -H=$DOCKER_HOST"
+
+# git
+alias gst="git status"
+alias gl="git pull"
+alias glr="git pull --rebase"
+alias gd="git diff"
+alias gds="git diff | subl -w"
+alias gcm="git checkout master"
+alias gco="git checkout"
