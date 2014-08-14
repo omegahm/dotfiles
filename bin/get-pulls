@@ -1,0 +1,28 @@
+#!/Users/ohm/.rbenv/versions/2.1.2/bin/ruby
+require 'octokit'
+require 'faraday-http-cache'
+require 'colorize'
+
+stack = Faraday::RackBuilder.new do |builder|
+  builder.use Faraday::HttpCache
+  builder.use Octokit::Response::RaiseError
+  builder.adapter Faraday.default_adapter
+end
+Octokit.middleware = stack
+
+client = Octokit::Client.new(access_token: ENV['GITHUB_ACCESS_TOKEN'])
+client.auto_paginate = true
+
+org   = client.org ENV['GITHUB_ORG'] || 'lokalebasen'
+repos = org.rels[:repos]
+repos.get.data.each do |repo|
+  pull_requests = repo.rels[:pulls].get.data
+  next if pull_requests.size == 0
+
+  puts "=== #{repo.name}"
+  pull_requests.each do |pr|
+    puts "  (#{pr.html_url.underline}) #{pr.title} - #{pr.user.login.red}"
+  end
+
+  puts
+end
