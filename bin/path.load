@@ -1,1 +1,1 @@
-set -x PATH $HOME/dotfiles/bin/pull-orgs
+set -x PATH $PATH $HOME/dotfiles/bin/pull-orgs

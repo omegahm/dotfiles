@@ -21,4 +21,4 @@ set -x DOCKER_HOST tcp://172.16.42.43:4243
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin
 
-. bin/path.load
+. $HOME/dotfiles/bin/path.load
