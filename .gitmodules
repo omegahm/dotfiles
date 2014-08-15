@@ -1,0 +1,3 @@
+[submodule "bin/pull-orgs"]
+	path = bin/pull-orgs
+	url = git://github.com/omegahm/pull-orgs.git
