@@ -1,5 +1,7 @@
 . secrets.load
 
+set -x EDITOR "subl -w"
+
 # Theme
 set fish_theme integral
 
