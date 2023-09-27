@@ -1,0 +1,19 @@
+[user]
+  name = Mads Ohm Larsen
+  email = mads.ohm@gmail.com
+[alias]
+  p = pull
+  pr = pull --rebase
+  co = checkout
+  st = status
+  df = diff
+  please = push --force-with-lease
+  cm = checkout develop
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[push]
+  autoSetupRemote = true
+[rebase]
+  autosquash = true
