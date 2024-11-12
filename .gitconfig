@@ -1,19 +1,42 @@
 [user]
   name = Mads Ohm Larsen
   email = mads.ohm@gmail.com
+
+[core]
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
 [alias]
   p = pull
   pr = pull --rebase
   co = checkout
   st = status
   df = diff
-  please = push --force-with-lease
-  cm = checkout develop
+  please = push --force-with-lease --force-if-includes
+  cm = checkout master
+
 [color]
   diff = auto
   status = auto
   branch = auto
+
 [push]
   autoSetupRemote = true
+
 [rebase]
   autosquash = true
+
+[absorb]
+  maxStack = 50
+
+[delta]
+  navigate = true
+  side-by-side = true
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
